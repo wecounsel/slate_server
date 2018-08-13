@@ -75,6 +75,4 @@ node_modules/
 # Ignore templates (no reason to bloat the repro
 templates/*
 !templates/forward_includes
-!templates/end_includes
-!templates/kittens
-!templates/puppers
+!templates/includes
