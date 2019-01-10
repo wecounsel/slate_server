@@ -83,8 +83,6 @@ production: &production
   user:
     - 1) Get detailed information about a user:'1)_get_detailed_information_about_a_user'
     - 10) Update a user:'10)_update_a_user'
-<<<<<<< 1d2b1c36d956f0d52ec81bb42fe9b6b1dccb1c2e
-<<<<<<< da89d36e98d6bdbd97d0f6ee1babeca25cf81b8d
     - 11) Get a list of the user&#39;s administrated organizations:'11)_get_a_list_of_the_users_administrated_organizations'
     - 12) Get a list of user&#39;s logins:'12)_get_a_list_of_users_logins'
     - 2) Get detailed information about the current user:'2)_get_detailed_information_about_the_current_user'
@@ -93,24 +91,6 @@ production: &production
     - 5) Get a list of session types owned by a user:'5)_get_a_list_of_session_types_owned_by_a_user'
     - 6) Get a list of all events for a user:'6)_get_a_list_of_all_events_for_a_user'
     - 7) Get a list of user&#39;s organization memberships:'7)_get_a_list_of_users_organization_memberships'
-=======
-    - 11) Get a list of the user&#39;s administrated organizations:'11)_get_a_list_of_the_user&#39;s_administrated_organizations'
-    - 12) Get a list of user&#39;s logins:'12)_get_a_list_of_user&#39;s_logins'
-=======
-    - 11) Get a list of the user&#39;s administrated organizations:'11)_get_a_list_of_the_users_administrated_organizations'
-    - 12) Get a list of user&#39;s logins:'12)_get_a_list_of_users_logins'
->>>>>>> clean up project and add logging.
-    - 2) Get detailed information about the current user:'2)_get_detailed_information_about_the_current_user'
-    - 3) Get a list of user&#39;s active consumer connections:'3)_get_a_list_of_users_active_consumer_connections'
-    - 4) Get a list of user&#39;s active provider connections:'4)_get_a_list_of_users_active_provider_connections'
-    - 5) Get a list of session types owned by a user:'5)_get_a_list_of_session_types_owned_by_a_user'
-    - 6) Get a list of all events for a user:'6)_get_a_list_of_all_events_for_a_user'
-<<<<<<< 1d2b1c36d956f0d52ec81bb42fe9b6b1dccb1c2e
-    - 7) Get a list of user&#39;s organization memberships:'7)_get_a_list_of_user&#39;s_organization_memberships'
->>>>>>> Added fonts and logos. Modified source to better support needs.
-=======
-    - 7) Get a list of user&#39;s organization memberships:'7)_get_a_list_of_users_organization_memberships'
->>>>>>> clean up project and add logging.
     - 8) Create a new provider user:'8)_create_a_new_provider_user'
     - 9) Create a new consumer user:'9)_create_a_new_consumer_user'
   userdevice:
