@@ -19,6 +19,29 @@ I wanted to make a rails app, and I needed a way to display an API, so took the 
 
   5. Set up your rack configuration and run the rails app! That's it, you're done. You now have a beautiful API documentation server that will never let you down!
 
+## Using A docker image
+
+  Using docker is a little more difficult as it needs to be able to access the templates as well as well as the data file. This is possible, but needs a more complex `docker run` command. Read the dockerfile. It outlines a lot of important information that is important to understand the following command:
+
+```shell
+sudo docker run \
+ -p 80:3000 \
+ --mount type=bind,source=/absolute/path/to/templates,target=/var/www/wecounsel_docs/templates,readonly \
+ --mount type=bind,source=/absolute/path/to/config/data.yml,target=/var/www/wecounsel_docs/config/data.yml,readonly \
+ -i \
+ wecounsel_docs:try3 \
+ rails s -b 0.0.0.0 -p 3000
+  ```
+  * The `-p 3000:3000` switch indicates that the Docker image should bind to the host machine's port 80 to the docker image's port 3000
+  * The `--mount` switch is more complicated, but easy to understand. Many things are passed to this switch:
+    * `type=bind` indicates this is a binding (like with the ports above)
+    * `source=/absolute/path/to/templates` indicates the source of the directory to bind. This should be an absolute path to wherever the templates folder is on disk.
+    * `target=/var/www/wecounsel_docs/templates` indicates where in the image this folder should bind to. In the case of this image, we bind to where the source is kept in the image.
+    * `readonly` indicates that the bound files/folders are read-only.
+  * The `-i` switch indicates that this should be an interactive shell. This can be swapped out with the `-d` switch to leave it detached.
+  * `wecounsel_docs:master` is the image and tag we are running.
+  * `rails s -b 0.0.0.0 -p 3000` is the classic rails server start command. this command needs the `-b 0.0.0.0` switch set to allow the rails server to be pushed forward.
+
 # Configuration
 
   A number of configuration options exist for slate server. Most options are inherited from the original [Slate project](https://github.com/lord/slate). I have added a few that enable new features or make more sense of current resources. To save space, I will only expand on new features.
